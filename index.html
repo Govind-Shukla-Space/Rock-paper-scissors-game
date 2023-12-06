@@ -4,37 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissor</title>
+    <link rel="icon" href="resources/images/favicon.ico">
+    <link rel="stylesheet" href="resources/style/style.css">
+    <title>RSP Game</title>
 </head>
 
 <body>
     <h1>Rock Paper Scissor</h1>
-    <button><img src="resources/images/rock.png"></button>
-    <button><img src="resources/images/paper.png"></button>
-    <button><img src="resources/images/scissors.png"></button>
-    <button><img src="resources/images/reset.jpg"></button>
+    <div id="buttons-container">
+        <button onclick="userMove='Rock';
+        generateComputerMove();
+        evaluateMoves()
+        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/rock.png">
+        </button>
+        <button onclick="userMove='Paper';
+        generateComputerMove();
+        evaluateMoves()
+        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/paper.png">
+        </button>
+        <button onclick="userMove='Scissors';
+        generateComputerMove();
+        evaluateMoves()
+        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/scissors.png">
+        </button>
+        <button>
+            <img id="reset-img" src="resources/images/reset.jpg">
+        </button>
+    </div>
     <h1>Game Summary</h1>
-    <table>
-        <tr>
-            <th>Wins</th>
-            <th>Losses</th>
-            <th>Tie</th>
-            <th>Game Played</th>
-        </tr>
-        <tr>
-            <th>0</th>
-            <th>0</th>
-            <th>0</th>
-            <th>0</th>
-        </tr>
-    </table>
+    <div id="game-summary-container">
+        <table>
+            <tr>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Tie</th>
+                <th>Game Played</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
     <h1>Game History</h1>
-    <table>
-        <tr>#</tr>
-        <tr>User Move</tr>
-        <tr>Computer</tr>
-        <tr>Result</tr>
-    </table>
+    <div id="game-history-container">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>User Move</th>
+                <th>Computer</th>
+                <th>Result</th>
+            </tr>
+        </table>
+    </div>
+    <script src="resources/scripts/rps.js"></script>
 </body>
 
 </html>
