@@ -2,69 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="resources/images/favicon.ico">
-    <link rel="stylesheet" href="resources/style/style.css">
-    <title>RSP Game</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPS Game</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="resources/style/style.css" />
 </head>
 
 <body>
-    <h1>Rock Paper Scissor</h1>
-    <div id="buttons-container">
-        <button onclick="captureUserMove('Rock');
+    <h1>Rock Paper Scissors</h1>
+    <div id="button-container">
+        <button onclick=" 
+        captureUserMove('Rock')
+        evaluateMoves();
         generateComputerMove();
-        evaluateMoves()
         updateGameScore();
-        randomGameSummary()">
-            <img src="resources/images/rock.png">
+        randomGameSummary();
+        rendergamehistory();
+
+         console.log(`userMove: ${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/rock.png" alt="" />
         </button>
-        <button onclick="captureUserMove('Paper');
+        <button onclick="
+        captureUserMove('Paper')
+        evaluateMoves();
         generateComputerMove();
-        evaluateMoves()
         updateGameScore();
-        randomGameSummary()">
-            <img src="resources/images/paper.png">
+        randomGameSummary();
+        rendergamehistory();
+         console.log(`userMove: ${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/paper.png" alt="" />
         </button>
-        <button onclick="captureUserMove('Scissors');
+        <button onclick="
+        captureUserMove('Scissors')
+        evaluateMoves();
         generateComputerMove();
-        evaluateMoves()
         updateGameScore();
-        randomGameSummary()">
-            <img src="resources/images/scissors.png">
+        randomGameSummary();
+        rendergamehistory();
+         console.log(`userMove: ${userMove} computerMove ${computerMove} result: ${result}`);">
+            <img src="resources/images/scissors.png" alt="" />
         </button>
-        <button>
-            <img id="reset-img" src="resources/images/reset.jpg">
+        <button onclick="
+        resetGameScore();
+        randomGameSummary();
+        resetGameHistory();
+        rendergamehistory();">
+            <img id="reset-img" src="resources/images/reset.jpg" alt="" />
         </button>
     </div>
-    <h1>Game Summary</h1>
-    <div id="game-summary-container">
-        <table>
-            <tr>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Tie</th>
-                <th>Game Played</th>
-            </tr>
-            <tr>
-                <td id="wins">0</td>
-                <td id="looses">0</td>
-                <td id="ties">0</td>
-                <td id="gamesPlayed">0</td>
-            </tr>
-        </table>
-    </div>
+    <h1>Game summary</h1>
+    <table>
+        <tr>
+            <th>Wins</th>
+            <th>Losess</th>
+            <th>Ties</th>
+            <th>Game Played</th>
+        </tr>
+        <tr>
+            <td id="win">0</td>
+            <td id="looses">0</td>
+            <td id="ties">0</td>
+            <td id="gamePlayed">0</td>
+        </tr>
+    </table>
     <h1>Game History</h1>
-    <div id="game-history-container">
-        <table>
-            <tr>
-                <th>#</th>
-                <th>User Move</th>
-                <th>Computer</th>
-                <th>Result</th>
-            </tr>
-        </table>
-    </div>
+    <table id="gamehistory">
+        <tr>
+            <th>#</th>
+            <th>User Move</th>
+            <th>Computer Move</th>
+            <th>Result</th>
+        </tr>
+    </table>
     <script src="resources/scripts/rps.js"></script>
 </body>
 
