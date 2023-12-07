@@ -12,22 +12,25 @@
 <body>
     <h1>Rock Paper Scissor</h1>
     <div id="buttons-container">
-        <button onclick="userMove='Rock';
+        <button onclick="captureUserMove('Rock');
         generateComputerMove();
         evaluateMoves()
-        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+        updateGameScore();
+        randomGameSummary()">
             <img src="resources/images/rock.png">
         </button>
-        <button onclick="userMove='Paper';
+        <button onclick="captureUserMove('Paper');
         generateComputerMove();
         evaluateMoves()
-        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+        updateGameScore();
+        randomGameSummary()">
             <img src="resources/images/paper.png">
         </button>
-        <button onclick="userMove='Scissors';
+        <button onclick="captureUserMove('Scissors');
         generateComputerMove();
         evaluateMoves()
-        console.log(`userMove:${userMove} computerMove ${computerMove} result: ${result}`);">
+        updateGameScore();
+        randomGameSummary()">
             <img src="resources/images/scissors.png">
         </button>
         <button>
@@ -44,10 +47,10 @@
                 <th>Game Played</th>
             </tr>
             <tr>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="wins">0</td>
+                <td id="looses">0</td>
+                <td id="ties">0</td>
+                <td id="gamesPlayed">0</td>
             </tr>
         </table>
     </div>
